@@ -1,3 +1,4 @@
 {
-  "endpoint":"http://localhost:20202"
+  "endpoint":"http://localhost:20202",
+  "useBackend": false
 }

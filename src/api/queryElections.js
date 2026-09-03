@@ -1,19 +1,19 @@
-import config from "./config.json";
+import config from './config.json'
+import { getElectionsStatic } from './StaticModeAssets/StaticQuery.js'
 
 export async function getElections() {
+    if (!config.useBackend) {
+        return getElectionsStatic()
+    }
 
     try {
-        // Make a GET request to fetch elections
-        const response = await fetch(`${config.endpoint}/elections`);
+        const response = await fetch(`${config.endpoint}/elections`)
         if (!response.ok) {
-            throw new Error(`Failed to fetch elections: ${response.statusText}`);
+            throw new Error(`Failed to fetch elections: ${response.statusText}`)
         }
-
-        // Parse the JSON response
-        const elections = await response.json();
-        return elections;
+        return await response.json()
     } catch (error) {
-        console.error("Error fetching elections:", error);
-        throw error; // Re-throw the error so the caller knows something went wrong
+        console.error('Error fetching elections:', error)
+        throw error
     }
 }
