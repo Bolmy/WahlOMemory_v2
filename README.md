@@ -26,7 +26,7 @@ Der API-Endpunkt muss in `/src/api/config.js` angepasst werden:
    ```json
    "endpoint": "https://ihre-api-url.de"
    ```
-2.  **Router-Konfiguration**<br> 
+2. **Router-Konfiguration**<br> 
 Bei Deployment muss der Server so konfiguriert sein, dass alle Pfade auf index.html geleitet werden
 3. **Projekt-Setup**<br>
 Zum lokalen Testen der Website:
@@ -34,6 +34,8 @@ Zum lokalen Testen der Website:
    npm install
    npm run dev
    ```
+4. **Statischer Modus**<br>
+Wenn die Nutzung eines Backends nicht gewünscht ist kann die Seite auch im static-Modus genutzt werden. Dafür muss in `/src/api/config.js` `UseBackend` auf `false` gesetzt werden, und die Logos und Dateien in `/src/api/StaticModeAssets/` hinzugefügt werden.
 
 ## Förderung
 Das Projekt wird gefördert durch:
